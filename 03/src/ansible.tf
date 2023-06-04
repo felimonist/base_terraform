@@ -34,7 +34,6 @@ provisioner "local-exec" {
     triggers = {  
       always_run         = "${timestamp()}" #всегда т.к. дата и время постоянно изменяются
       playbook_src_hash  = file("${abspath(path.module)}/test.yml") # при изменении содержимого playbook файла
-      ssh_public_key     = var.public_key # при изменении переменной
     }
 
 }
